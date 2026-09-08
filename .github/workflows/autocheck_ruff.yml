@@ -13,9 +13,11 @@ jobs:
         with:
           python-version: '3.13' 
       - name: Установка poetry
-        run: pip install poetry
+        run: |
+          pip install poetry
+          poetry config virtualenvs.in-project true
       - name: Установка зависимостей
-        run: poetry install
+        run: poetry add ruff
       - name: Исправления ruff
         run: | 
           poetry run ruff check . --fix
