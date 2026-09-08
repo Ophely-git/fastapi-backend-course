@@ -6,6 +6,12 @@ jobs:
     name: Тестирование ruff
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Установка Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
       - name: Установка poetry
         run: pip install poetry
       - name: Установка зависимостей
