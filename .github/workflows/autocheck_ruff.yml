@@ -17,7 +17,7 @@ jobs:
           pip install poetry
           poetry config virtualenvs.in-project true
       - name: Установка зависимостей
-        run: poetry add ruff
+        run: poetry install --no-root
       - name: Исправления ruff
         run: | 
           poetry run ruff check . --fix
